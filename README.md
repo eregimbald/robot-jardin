@@ -8,6 +8,8 @@
 
 #### Configuration
 
+##### wifi-interfac
+```
 sudo nano /etc/network/interfaces
 
 auto wlan0
@@ -16,7 +18,10 @@ iface wlan0 inet static
   netmast 255.255.255.0
   gateway 192.168.1.1
   wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+```
 
+##### wpa_supplicant
+```
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 
 country=CA
@@ -27,12 +32,15 @@ network={
     ssid="ssid"
     psk="psk"
 }
+```
 
+##### Enabling services
+```
 sudo raspi-config
 Interfacing options
 Enable ssh
 Enable SPI
-
+```
 ## Packages
 
 ### spidev
