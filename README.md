@@ -43,6 +43,8 @@ Enable SPI
 ```
 ## Packages
 
+Everything runs on Python3
+
 ### spidev
 ```
 sudo apt-get install python3-spidev
