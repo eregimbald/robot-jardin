@@ -1,5 +1,14 @@
 # robot-jardin
 
+A controller to automate watering of an door tomato farm.
+
+![Concept](doc/concept.png)
+
+* Moisture sensors for soil.
+* Solenoids to control watering.
+* Hoses and T pieces to direct water into the pots.
+* A LED light system. Mechanism to turn on and turn off the lights.
+
 ## Requirements
 
 ### Platforms
