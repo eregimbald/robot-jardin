@@ -1,0 +1,180 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:local
+LIBS:analog_input-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Q_NPN_ECB Q?
+U 1 1 5AD39BB1
+P 3700 2200
+F 0 "Q?" H 3900 2250 50  0000 L CNN
+F 1 "BD237STU" H 3900 2150 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-126_Vertical" H 3900 2300 50  0001 C CNN
+F 3 "" H 3700 2200 50  0001 C CNN
+	1    3700 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Q_NPN_EBC Q?
+U 1 1 5AD3A330
+P 3200 2450
+F 0 "Q?" H 3400 2500 50  0000 L CNN
+F 1 "2N4124" H 3400 2400 50  0000 L CNN
+F 2 "" H 3400 2550 50  0001 C CNN
+F 3 "" H 3200 2450 50  0001 C CNN
+	1    3200 2450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 5AD3A36D
+P 3600 2450
+F 0 "R?" V 3680 2450 50  0000 C CNN
+F 1 "100" V 3600 2450 50  0000 C CNN
+F 2 "" V 3530 2450 50  0001 C CNN
+F 3 "" H 3600 2450 50  0001 C CNN
+	1    3600 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5AD3A3B4
+P 3800 2650
+F 0 "R?" V 3880 2650 50  0000 C CNN
+F 1 "0.5 Ω" V 3800 2650 50  0000 C CNN
+F 2 "" V 3730 2650 50  0001 C CNN
+F 3 "" H 3800 2650 50  0001 C CNN
+	1    3800 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 2450 3450 2450
+Wire Wire Line
+	3800 2400 3800 2500
+Wire Wire Line
+	3750 2450 3800 2450
+Connection ~ 3800 2450
+Connection ~ 3100 2200
+Wire Wire Line
+	3800 1750 3800 2000
+Wire Wire Line
+	3800 2800 3800 2900
+Wire Wire Line
+	3100 2850 4050 2850
+Text HLabel 2500 2200 0    60   Input ~ 0
+D
+Wire Wire Line
+	3100 2850 3100 2650
+Connection ~ 3800 2850
+$Comp
+L Conn_01x02 J?
+U 1 1 5AD3A71B
+P 4250 2850
+F 0 "J?" H 4250 2950 50  0000 C CNN
+F 1 "Conn_01x02" H 4250 2650 50  0000 C CNN
+F 2 "" H 4250 2850 50  0001 C CNN
+F 3 "" H 4250 2850 50  0001 C CNN
+	1    4250 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AD3A76D
+P 3800 3300
+F 0 "#PWR?" H 3800 3050 50  0001 C CNN
+F 1 "GND" H 3800 3150 50  0000 C CNN
+F 2 "" H 3800 3300 50  0001 C CNN
+F 3 "" H 3800 3300 50  0001 C CNN
+	1    3800 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L +12V #PWR?
+U 1 1 5AD3A7EF
+P 3800 1750
+F 0 "#PWR?" H 3800 1600 50  0001 C CNN
+F 1 "+12V" H 3800 1890 50  0000 C CNN
+F 2 "" H 3800 1750 50  0001 C CNN
+F 3 "" H 3800 1750 50  0001 C CNN
+	1    3800 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 2250 3100 2200
+$Comp
+L R R?
+U 1 1 5AD3A83F
+P 2800 2200
+F 0 "R?" V 2880 2200 50  0000 C CNN
+F 1 "1K" V 2800 2200 50  0000 C CNN
+F 2 "" V 2730 2200 50  0001 C CNN
+F 3 "" H 2800 2200 50  0001 C CNN
+	1    2800 2200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2500 2200 2650 2200
+Wire Wire Line
+	2950 2200 3500 2200
+$Comp
+L D D?
+U 1 1 5AD3B18E
+P 3800 3050
+F 0 "D?" H 3800 3150 50  0000 C CNN
+F 1 "1N4001" H 3800 2950 50  0000 C CNN
+F 2 "" H 3800 3050 50  0001 C CNN
+F 3 "" H 3800 3050 50  0001 C CNN
+	1    3800 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3800 3300 3800 3200
+Wire Wire Line
+	4050 2950 3950 2950
+Wire Wire Line
+	3950 2950 3950 3250
+Wire Wire Line
+	3950 3250 3800 3250
+Connection ~ 3800 3250
+$EndSCHEMATC
