@@ -1,6 +1,6 @@
 # robot-jardin
 
-A controller to automate watering of an door tomato farm.
+A controller to automate watering of an indoor tomato farm.
 
 ![Concept](doc/concept.png)
 
@@ -109,7 +109,7 @@ We needed 12V to drive the solenoid.  The solenoid takes about 100mA of power.  
 We found this on Amazon for $12
 ![AC power supply](doc/ac_power_supply.jpg)
 
-It sais it is for lED strip lighting. 12V rated at 5A.  This will be more than enough for our uses.
+It sais it is for LED strip lighting. 12V rated at 5A.  This will be more than enough for our uses.
 
 ## Voltage Regulator
 Rather than needing a 2nd power brick adapter for powering the Raspberry Pi, which is another plug in the power bar, and another cable, and that micro USB power connector that never stays plugged in nicely (compared to a barrel jack power connector), it would be better if we could power the Raspberry Pi from our power adapter.
@@ -152,6 +152,7 @@ As discussed earlier, it is preferred we read the moisture sensor analog output,
 
 The Raspberry Pi has no analog inputs. So we need something that can provide us with analog to digital conversion. For this we have selected the MCP3008 device.
 ![MCP3008 application](doc/mcp3008_application.png)
+
 This is because this is a popular and inexpensive device, that is available in a 16-dip package, and has a good community supported driver.
 
 It also has 8 channels. So we can readily connect up to 8 analog inputs. Such as moisture sensors, or anything that can provide us a voltage , like ambient light sensors, noise sensors, pressure sensors, potentiometers, etc.
@@ -165,7 +166,9 @@ But we thought there should be some short circuit protection, in case we short o
 
 ![solenoid driver](doc/solenoid_driver.png)
 
-The input from the Raspberry Pi digital IO pin of logic level HIGH will turn on the solenoid.  I prefer this option from the usual Ali express type of relay board. Where they have the opto isolators and relays, which can be used for anything from 12 VDC to 120 VAC. But they are active low inputs. Which means when you power on the Pi and the GPIO pins are logic level LOW by default, this will turn on the relays until our software boots up and asserts logic level HIGH to the pin.   Practically these relay boards do this to allow for more general compatibility with microcontrollers. Most semiconductor devices are able to sink more current (pull a pin low) then they are able to source current (pull a pin high). Here this is a mute point since we are using a transitor driver which uses much less current than the opto isolators (about 20 mA) on a relay board.
+The input from the Raspberry Pi digital IO pin of logic level HIGH will turn on the solenoid.  I prefer this option from the usual Ali express type of relay board. Where they have the opto isolators and relays, which can be used for anything from 12 VDC to 120 VAC. But they are active low inputs. Which means when you power on the Pi and the GPIO pins are logic level LOW by default, this will turn on the relays until our software boots up and asserts logic level HIGH to the pin.
+
+Practically these relay boards do this to allow for more general compatibility with microcontrollers. Most semiconductor devices are able to sink more current (pull a pin low) then they are able to source current (pull a pin high). Here this is a mute point since we are using a transitor driver which uses much less current than the opto isolators (about 20 mA) on a relay board.
 
 The 12V power for the solenoid will be provided by the power supply brick above.
 
@@ -201,3 +204,13 @@ here it requires (2) GPIO pins from the Raspberry Pi (the I2C bus pins) and prov
 If we were using them as digital inputs, then we would need some another GPIO pins for connecting those INTA, INTB pins. Which are for notifying the Raspberry Pi there is a pin state change on an input pin.
 
 ## Other Considerations
+
+The site where this is installed should have a ground fault circuit interrupt (GFCI) type outlet installed into the wall.
+
+This is where we will plug in
+* The power adapter for powering the Raspberry Pi and solenoids and controlling the lights.
+* The controlled plug for the lighting for the plants.
+
+This is because we are working with water here.  According to Canadian buliding code, electrical applicances used near water, such as in a bathroom or kitchen, should be serviced from a GFCI outlet.
+
+It is also beyond the scope of this project to instruct how to obtain and install a GFCI outlet. Consult your local electrician or home improvement store.
