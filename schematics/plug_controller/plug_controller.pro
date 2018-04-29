@@ -1,4 +1,4 @@
-update=Saturday, April 14, 2018 'pmt' 12:39:02 pm
+update=Saturday, April 28, 2018 'amt' 10:34:14 am
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,3 +59,4 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=/Users/travis/Documents/digikey-kicad-library/digikey-symbols/dk_Thyristors-TRIACs
+LibName31=/Users/travis/Documents/kicad/library/local
